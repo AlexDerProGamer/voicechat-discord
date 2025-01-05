@@ -149,7 +149,7 @@ public class FabricPlatform implements Platform {
 
             var color = component.color();
             if (color != null)
-                style = style.withColor(net.minecraft.text.TextColor.fromRgb(Integer.parseInt(color.asHexString().substring(1), 16)));
+                style = style.withColor(TextColor.fromRgb(Integer.parseInt(color.asHexString().substring(1), 16)));
 
             for (var entry : component.decorations().entrySet()) {
                 var decoration = entry.getKey();
@@ -170,17 +170,17 @@ public class FabricPlatform implements Platform {
 
             var clickEvent = component.clickEvent();
             if (clickEvent != null) {
-                net.minecraft.text.ClickEvent.Action action = null;
+                ClickEvent.Action action = null;
                 switch (clickEvent.action()) {
-                    case OPEN_URL -> action = net.minecraft.text.ClickEvent.Action.OPEN_URL;
-                    case OPEN_FILE -> action = net.minecraft.text.ClickEvent.Action.OPEN_FILE;
-                    case RUN_COMMAND -> action = net.minecraft.text.ClickEvent.Action.RUN_COMMAND;
-                    case SUGGEST_COMMAND -> action = net.minecraft.text.ClickEvent.Action.SUGGEST_COMMAND;
-                    case CHANGE_PAGE -> action = net.minecraft.text.ClickEvent.Action.CHANGE_PAGE;
-                    case COPY_TO_CLIPBOARD -> action = net.minecraft.text.ClickEvent.Action.COPY_TO_CLIPBOARD;
+                    case OPEN_URL -> action = ClickEvent.Action.OPEN_URL;
+                    case OPEN_FILE -> action = ClickEvent.Action.OPEN_FILE;
+                    case RUN_COMMAND -> action = ClickEvent.Action.RUN_COMMAND;
+                    case SUGGEST_COMMAND -> action = ClickEvent.Action.SUGGEST_COMMAND;
+                    case CHANGE_PAGE -> action = ClickEvent.Action.CHANGE_PAGE;
+                    case COPY_TO_CLIPBOARD -> action = ClickEvent.Action.COPY_TO_CLIPBOARD;
                     default -> warn("Unknown click event action: " + clickEvent.action());
                 }
-                style = style.withClickEvent(new net.minecraft.text.ClickEvent(action, clickEvent.value()));
+                style = style.withClickEvent(new ClickEvent(action, clickEvent.value()));
             }
 
             var hoverEvent = component.hoverEvent();
