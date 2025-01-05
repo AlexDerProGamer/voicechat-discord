@@ -21,7 +21,7 @@ object Properties {
     const val fabricApiDevVersion = "0.107.3+$fabricMinecraftDevVersion"
 
     /* Dependencies */
-    const val voicechatApiVersion = "2.5.0"
+    const val voicechatApiVersion = "2.4.11"
     const val voicechatModRuntimeVersion = "2.5.25"
     const val yamlConfigurationVersion = "2.0.2"
     const val javaSemverVersion = "0.10.2"
@@ -45,7 +45,8 @@ object Properties {
         "1.21",
         "1.21.1",
         "1.21.2",
-        "1.21.3"
+        "1.21.3",
+        "1.21.4"
     )
 
     /* Gradle Plugins */
