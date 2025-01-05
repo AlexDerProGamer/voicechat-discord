@@ -57,8 +57,7 @@ public class PaperPlatform implements Platform {
             }
         }
         if (nmsEntity == null) return null;
-        Entity entity = Bukkit.getEntity(nmsEntity.getUUID());
-        if (entity == null) return null;
+        Entity entity = nmsEntity.getBukkitEntity();
         return api.createPosition(
                 entity.getLocation().getX(),
                 entity.getLocation().getY(),
